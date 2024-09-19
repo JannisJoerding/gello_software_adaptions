@@ -44,7 +44,7 @@ class DynamixelRobotConfig:
 
 
 PORT_CONFIG_MAP: Dict[str, DynamixelRobotConfig] = {
-    #Our Right Panda
+    #Our Right Panda (arm with torsion springs)
     "/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT7928TO-if00-port0": DynamixelRobotConfig(
         joint_ids=(1, 2, 3, 4, 5, 6, 7),
         joint_offsets=(
@@ -54,13 +54,14 @@ PORT_CONFIG_MAP: Dict[str, DynamixelRobotConfig] = {
             2*np.pi/2,
             3*np.pi/2,
             2*np.pi/2,
-            2*np.pi/2
+            4*np.pi/2
         ),
         #joint_signs=(1, -1, 1, 1, 1, -1, 1), #Originale Version
         joint_signs=(1, 1, 1, -1, 1, -1, 1), #Meine Version
-        gripper_config=(8, 196, 154),
+        gripper_config=(8, 147, 177),
+        #gripper_config=(8, 196, 154),
     ),
-    #Our Left Panda
+    #Our Left Panda (arm with rubber bands)
     "/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FT7928LZ-if00-port0": DynamixelRobotConfig(
         joint_ids=(1, 2, 3, 4, 5, 6, 7),
         joint_offsets=(

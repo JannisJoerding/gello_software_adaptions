@@ -182,7 +182,11 @@ class MujocoRobotServer:
             _joint_state[-1] = _joint_state[-1] * 255
             self._joint_cmd = _joint_state
         else:
-            self._joint_cmd = joint_state.copy()
+            #self._joint_cmd = joint_state.copy()   #Frühere Version
+            _joint_state = joint_state.copy()
+            _joint_state[-1] = _joint_state[-1] * 255
+            self._joint_cmd = _joint_state
+
 
     def freedrive_enabled(self) -> bool:
         return True
@@ -228,16 +232,16 @@ class MujocoRobotServer:
                 # self._data.qpos[:] = self._joint_cmd
                 mujoco.mj_step(self._model, self._data)
                 self._joint_state = self._data.qpos.copy()[: self._num_joints]
-
                 if self._print_joints:
                     print(self._joint_state)
 
                 # Example modification of a viewer option: toggle contact points every two seconds.
                 with viewer.lock():
                     # TODO remove?
-                    viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_CONTACTPOINT] = int(
-                        self._data.time % 2
-                    )
+                    #viewer.opt.flags[mujoco.mjtVisFlag.mjVIS_CONTACTPOINT] = int(
+                    #    self._data.time % 2
+                    #)
+                    x=1 #tmp
 
                 # Pick up changes to the physics state, apply perturbations, update options from GUI.
                 viewer.sync()

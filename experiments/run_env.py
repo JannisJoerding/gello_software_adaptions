@@ -131,7 +131,7 @@ def main(args):
 
                 for jnt in np.linspace(curr_joints, reset_joints, steps):
                     env.step(jnt)
-                    time.sleep(0.001)
+                    time.sleep(0.001) #limitierend?
         elif args.agent == "quest":
             from gello.agents.quest_agent import SingleArmQuestAgent
 
