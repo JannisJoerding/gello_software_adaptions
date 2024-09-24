@@ -205,7 +205,7 @@
                       <geom name="panda scene//unnamed_geom_57" class="panda scene/visual" material="panda scene/black" mesh="panda scene/link7_6"/>
                       <geom name="panda scene//unnamed_geom_58" class="panda scene/visual" material="panda scene/white" mesh="panda scene/link7_7"/>
                       <geom name="panda scene//unnamed_geom_59" class="panda scene/collision" mesh="panda scene/link7_c"/>
-                      <body name="panda scene/hand" pos="0 0 0.107" quat="0.92387949999999996 0 0 -0.38268340000000001">
+                      <body name="panda scene/hand" pos="0 0 0.107" quat="1 0 0 0">
                         <inertial pos="-0.01 0 0.029999999999999999" mass="0.72999999999999998" diaginertia="0.001 0.0025000000000000001 0.0016999999999999999"/>
                         <geom name="panda scene//unnamed_geom_60" class="panda scene/visual" material="panda scene/off_white" mesh="panda scene/hand_0"/>
                         <geom name="panda scene//unnamed_geom_61" class="panda scene/visual" material="panda scene/black" mesh="panda scene/hand_1"/>
@@ -276,6 +276,6 @@
     <general name="panda scene/actuator8" class="panda scene/panda" ctrlrange="0 255" forcerange="-10000 10000" gear="3" tendon="panda scene/split" gainprm="0.047058823530000002 0 0" biasprm="0 -100 -10"/>
   </actuator>
   <keyframe>
-    <key name="panda scene/home" qpos="0 0 0 -1.5707899999999999 0 1.5707899999999999 -0.7853 0.040000000000000001 0.040000000000000001 0 0 0 1 0 0 0" ctrl="0 0 0 -1.5707899999999999 0 1.5707899999999999 -0.7853 255"/>
+    <key name="panda scene/home" qpos="0 0 0 -1.5707899999999999 0 1.5707899999999999 0 0.040000000000000001 0.040000000000000001 0 0 0 1 0 0 0" ctrl="0 0 0 -1.5707899999999999 0 1.5707899999999999 0 255"/>
   </keyframe>
 </mujoco>
