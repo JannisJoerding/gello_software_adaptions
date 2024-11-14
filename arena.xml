@@ -50,6 +50,7 @@
     <material name="panda scene/black" class="panda scene/panda" rgba="0.25 0.25 0.25 1"/>
     <material name="panda scene/green" class="panda scene/panda" rgba="0 1 0 1"/>
     <material name="panda scene/light_blue" class="panda scene/panda" rgba="0.039216000000000001 0.54117599999999999 0.78039199999999997 1"/>
+    <material name="panda scene/transparent" class="panda scene/" rgba="1 1 1 0.10000000000000001"/>
     <mesh name="panda scene/link0_c" class="panda scene/" file="link0-3f633d19409870795516c6de40b4c7922f53c43d.stl"/>
     <mesh name="panda scene/link1_c" class="panda scene/" file="link1-53f934209b6019b996b6d9c714d0a9cf102f7fb2.stl"/>
     <mesh name="panda scene/link2_c" class="panda scene/" file="link2-8500c695b73e8ceeaa520c02db5684f02793b80f.stl"/>
@@ -205,7 +206,7 @@
                       <geom name="panda scene//unnamed_geom_57" class="panda scene/visual" material="panda scene/black" mesh="panda scene/link7_6"/>
                       <geom name="panda scene//unnamed_geom_58" class="panda scene/visual" material="panda scene/white" mesh="panda scene/link7_7"/>
                       <geom name="panda scene//unnamed_geom_59" class="panda scene/collision" mesh="panda scene/link7_c"/>
-                      <body name="panda scene/hand" pos="0 0 0.107" quat="1 0 0 0">
+                      <body name="panda scene/hand" pos="0 0 0.107" quat="0.70709999999999995 0 0 0.70709999999999995">
                         <inertial pos="-0.01 0 0.029999999999999999" mass="0.72999999999999998" diaginertia="0.001 0.0025000000000000001 0.0016999999999999999"/>
                         <geom name="panda scene//unnamed_geom_60" class="panda scene/visual" material="panda scene/off_white" mesh="panda scene/hand_0"/>
                         <geom name="panda scene//unnamed_geom_61" class="panda scene/visual" material="panda scene/black" mesh="panda scene/hand_1"/>
@@ -246,13 +247,51 @@
           </body>
         </body>
       </body>
-      <body name="panda scene/free_box" pos="0.5 0 0">
+      <body name="panda scene/free_box" pos="0.47499999999999998 0 0.10000000000000001">
         <joint name="panda scene/box_slide_x" class="panda scene/" type="slide" axis="1 0 0" range="-1 1"/>
         <joint name="panda scene/box_slide_y" class="panda scene/" type="slide" axis="0 1 0" range="-1 1"/>
         <joint name="panda scene/box_slide_z" class="panda scene/" type="slide" axis="0 0 1" range="0 2"/>
         <joint name="panda scene/box_rotation" class="panda scene/" type="ball"/>
         <inertial pos="0 0 0" mass="0.10000000000000001" diaginertia="0.01 0.01 0.01"/>
-        <geom name="panda scene//unnamed_geom_82" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.025000000000000001 0.025000000000000001 0.17000000000000001" friction="1 1 1" density="1000"/>
+        <geom name="panda scene//unnamed_geom_82" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.025000000000000001 0.025000000000000001 0.11" friction="1 1 1" density="1000"/>
+      </body>
+      <body name="panda scene/plate" pos="0.59999999999999998 0 0.050000000000000003">
+        <geom name="panda scene//unnamed_geom_83" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.5 0.5 0.050000000000000003" material="panda scene/black" pos="0 0 0"/>
+        <body name="panda scene/static_block1" pos="-0.16500000000000001 -0.20000000000000001 0.10000000000000001">
+          <geom name="panda scene//unnamed_geom_84" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.080000000000000002 0.070000000000000007" material="panda scene/black" pos="-0.059999999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_85" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.080000000000000002 0.070000000000000007" material="panda scene/black" pos="0.059999999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_86" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.080000000000000002 0.02 0.070000000000000007" material="panda scene/black" pos="0 -0.059999999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_87" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.080000000000000002 0.02 0.070000000000000007" material="panda scene/black" pos="0 0.059999999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_88" class="panda scene/" type="box" contype="0" conaffinity="0" size="0.040000000000000001 0.040000000000000001 0.059999999999999998" material="panda scene/green" pos="0 0 0"/>
+        </body>
+        <body name="panda scene/static_block2" pos="0.025000000000000001 -0.20000000000000001 0.10000000000000001">
+          <geom name="panda scene//unnamed_geom_89" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.072499999999999995 0.070000000000000007" material="panda scene/black" pos="-0.052499999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_90" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.072499999999999995 0.070000000000000007" material="panda scene/black" pos="0.052499999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_91" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.072499999999999995 0.02 0.070000000000000007" material="panda scene/black" pos="0 -0.052499999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_92" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.072499999999999995 0.02 0.070000000000000007" material="panda scene/black" pos="0 0.052499999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_93" class="panda scene/" type="box" contype="0" conaffinity="0" size="0.032500000000000001 0.032500000000000001 0.059999999999999998" material="panda scene/green" pos="0 0 0"/>
+        </body>
+        <body name="panda scene/static_block3" pos="0.025000000000000001 0 0.10000000000000001">
+          <geom name="panda scene//unnamed_geom_94" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.067500000000000004 0.070000000000000007" material="panda scene/black" pos="-0.047500000000000001 0 0"/>
+          <geom name="panda scene//unnamed_geom_95" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.067500000000000004 0.070000000000000007" material="panda scene/black" pos="0.047500000000000001 0 0"/>
+          <geom name="panda scene//unnamed_geom_96" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.067500000000000004 0.02 0.070000000000000007" material="panda scene/black" pos="0 -0.047500000000000001 0"/>
+          <geom name="panda scene//unnamed_geom_97" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.067500000000000004 0.02 0.070000000000000007" material="panda scene/black" pos="0 0.047500000000000001 0"/>
+          <geom name="panda scene//unnamed_geom_98" class="panda scene/" type="box" contype="0" conaffinity="0" size="0.0275 0.0275 0.059999999999999998" material="panda scene/green" pos="0 0 0"/>
+        </body>
+        <body name="panda scene/static_block4" pos="0.025000000000000001 0.20000000000000001 0.10000000000000001">
+          <geom name="panda scene//unnamed_geom_99" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.065000000000000002 0.070000000000000007" material="panda scene/black" pos="-0.044999999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_100" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.065000000000000002 0.070000000000000007" material="panda scene/black" pos="0.044999999999999998 0 0"/>
+          <geom name="panda scene//unnamed_geom_101" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.065000000000000002 0.02 0.070000000000000007" material="panda scene/black" pos="0 -0.044999999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_102" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.065000000000000002 0.02 0.070000000000000007" material="panda scene/black" pos="0 0.044999999999999998 0"/>
+          <geom name="panda scene//unnamed_geom_103" class="panda scene/" type="box" contype="0" conaffinity="0" size="0.025000000000000001 0.025000000000000001 0.059999999999999998" material="panda scene/green" pos="0 0 0"/>
+        </body>
+        <body name="panda scene/static_block5" pos="-0.16500000000000001 0.20000000000000001 0.10000000000000001">
+          <geom name="panda scene//unnamed_geom_104" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.064000000000000001 0.070000000000000007" material="panda scene/black" pos="-0.043999999999999997 0 0"/>
+          <geom name="panda scene//unnamed_geom_105" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.02 0.064000000000000001 0.070000000000000007" material="panda scene/black" pos="0.043999999999999997 0 0"/>
+          <geom name="panda scene//unnamed_geom_106" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.064000000000000001 0.02 0.070000000000000007" material="panda scene/black" pos="0 -0.043999999999999997 0"/>
+          <geom name="panda scene//unnamed_geom_107" class="panda scene/" type="box" contype="1" conaffinity="1" size="0.064000000000000001 0.02 0.070000000000000007" material="panda scene/black" pos="0 0.043999999999999997 0"/>
+          <geom name="panda scene//unnamed_geom_108" class="panda scene/" type="box" contype="0" conaffinity="0" size="0.024 0.024 0.059999999999999998" material="panda scene/green" pos="0 0 0"/>
+        </body>
       </body>
     </body>
   </worldbody>

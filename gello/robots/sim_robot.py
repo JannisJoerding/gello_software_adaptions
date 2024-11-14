@@ -182,7 +182,8 @@ class MujocoRobotServer:
             _joint_state[-1] = _joint_state[-1] * 255
             self._joint_cmd = _joint_state
         else:
-            #self._joint_cmd = joint_state.copy()   #Frühere Version
+            #self._joint_cmd = joint_state.copy()   #Original version
+            #Scaling is required for the franka panda
             _joint_state = joint_state.copy()
             _joint_state[-1] = _joint_state[-1] * 255
             self._joint_cmd = _joint_state

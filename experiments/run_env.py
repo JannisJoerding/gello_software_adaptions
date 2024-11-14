@@ -120,9 +120,9 @@ def main(args):
                     [0, 0, 0, -90, 0, 90, 0, 0]
                 )  # Change this to your own reset joints
             else:
-                #reset_joints = args.start_joints #Originale Version
-                reset_joints = np.array(args.start_joints) #Vorschlag von Harimus in Issue #4
-            #agent = GelloAgent(port=gello_port, start_joints=args.start_joints) #Originale Version
+                #reset_joints = args.start_joints #Original version
+                reset_joints = np.array(args.start_joints) #Harimus in Issue #4
+            #agent = GelloAgent(port=gello_port, start_joints=args.start_joints) #Original Version
             agent = GelloAgent(port=gello_port, start_joints=reset_joints)
             curr_joints = env.get_obs()["joint_positions"]
             if reset_joints.shape == curr_joints.shape:
@@ -131,7 +131,7 @@ def main(args):
 
                 for jnt in np.linspace(curr_joints, reset_joints, steps):
                     env.step(jnt)
-                    time.sleep(0.001) #limitierend?
+                    time.sleep(0.001) 
         elif args.agent == "quest":
             from gello.agents.quest_agent import SingleArmQuestAgent
 
